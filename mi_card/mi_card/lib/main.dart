@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('images/vesikalik.png'),
+              backgroundImage: AssetImage('images/vesikaresim.png'),
             ),
             Text(
-              'Ali Can',
+              'Bülent Gökdaş',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Pacifico'),
             ),
             Text(
-              'Developer',
+              'Backend Developer',
               style: TextStyle(
                   color: Colors.teal.shade100,
                   fontSize: 20,
@@ -34,50 +35,45 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'SourceSansPro',
                   letterSpacing: 2.5),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
-              padding: EdgeInsets.all(10),
-              color: Colors.white,
-              child: Row(
-                  children: <Widget>[
-                  Icon(
-                    Icons.phone,
-                    color: Colors.teal.shade100,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    '123 456 789',
-                    style: TextStyle(
-                        color: Colors.teal.shade900,
-                        fontFamily: 'SourceSansPro',
-                        fontSize: 20),
-                  ),
-                ],
+            SizedBox(
+              width: 150,
+              height: 20,
+              child: Divider(
+                color: Colors.teal.shade100,
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
-              padding: EdgeInsets.all(10),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
               color: Colors.white,
-              child: Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.teal.shade100,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'alican@gmail.com',
-                    style: TextStyle(
-                        color: Colors.teal.shade900,
-                        fontFamily: 'SourceSansPro',
-                        fontSize: 20),
-                  ),
-                ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  color: Colors.teal.shade100,
+                ),
+                title: Text(
+                  '+90 533 654 7706',
+                  style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 18),
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              color: Colors.white,
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  color: Colors.teal.shade100,
+                ),
+                title: Text(
+                  'bulentgokdas@gmail.com',
+                  style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 18),
+                ),
               ),
             ),
           ],
