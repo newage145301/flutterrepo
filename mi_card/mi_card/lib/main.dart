@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
               backgroundImage: AssetImage('images/vesikalik.png'),
             ),
             Text(
-              'Hüsamettin Cindoruk',
+              'Ali Can',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -33,7 +33,53 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontFamily: 'SourceSansPro',
                   letterSpacing: 2.5),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+              padding: EdgeInsets.all(10),
+              color: Colors.white,
+              child: Row(
+                  children: <Widget>[
+                  Icon(
+                    Icons.phone,
+                    color: Colors.teal.shade100,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    '123 456 789',
+                    style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+              padding: EdgeInsets.all(10),
+              color: Colors.white,
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.email,
+                    color: Colors.teal.shade100,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'alican@gmail.com',
+                    style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
           ],
         )),
       ),
