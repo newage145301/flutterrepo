@@ -1,4 +1,4 @@
-name: xylophone
+name: destini_challenge_starting
 description: A new Flutter application.
 
 version: 1.0.0+1
@@ -9,18 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^0.13.1
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
-
   uses-material-design: true
-
   assets:
-    - assets/
-
+  - images/
