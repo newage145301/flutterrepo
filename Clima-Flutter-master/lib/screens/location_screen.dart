@@ -74,3 +74,6 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
+/*int id= jsonDecode(data)['weather'][0]['id'];
+String cityName= jsonDecode(data)['name'];
+double temp= jsonDecode(data)['main']['temp'];*/
