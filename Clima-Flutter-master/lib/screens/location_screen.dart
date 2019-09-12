@@ -1,12 +1,42 @@
+import 'dart:convert';
+
+import 'package:clima/services/weather.dart';
 import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 
 class LocationScreen extends StatefulWidget {
+  LocationScreen({this.weatherData});
+
+  final weatherData;
+
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
 
+var weatherData;
+int id;
+String cityName;
+int temp;
+String icon;
+String desc;
+
 class _LocationScreenState extends State<LocationScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    weatherData = widget.weatherData;
+    id = weatherData['weather'][0]['id'];
+    cityName = weatherData['name'];
+    temp = (weatherData['main']['temp']).toInt();
+
+    WeatherModel weatherModel= WeatherModel();
+    desc= weatherModel.getMessage(temp);
+    icon =weatherModel.getWeatherIcon(id);
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,11 +79,11 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      '32°',
+                      '$temp°',
                       style: kTempTextStyle,
                     ),
                     Text(
-                      '☀️',
+                      icon,
                       style: kConditionTextStyle,
                     ),
                   ],
@@ -62,7 +92,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(right: 15.0),
                 child: Text(
-                  "It's 🍦 time in San Francisco!",
+                  desc,
                   textAlign: TextAlign.right,
                   style: kMessageTextStyle,
                 ),
@@ -74,6 +104,3 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
-/*int id= jsonDecode(data)['weather'][0]['id'];
-String cityName= jsonDecode(data)['name'];
-double temp= jsonDecode(data)['main']['temp'];*/

@@ -17,6 +17,8 @@ class NetworkHelper {
       } else {
         print(response.statusCode);
       }
-    } catch (e) {}
+    } catch (e) {
+      print('Error:$e');
+    }
   }
 }
