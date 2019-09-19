@@ -1,31 +1,27 @@
 const List<String> currenciesList = [
-  'AUD',
-  'BRL',
-  'CAD',
-  'CNY',
-  'EUR',
-  'GBP',
-  'HKD',
-  'IDR',
-  'ILS',
-  'INR',
-  'JPY',
-  'MXN',
-  'NOK',
-  'NZD',
-  'PLN',
-  'RON',
-  'RUB',
-  'SEK',
-  'SGD',
   'USD',
-  'ZAR'
+  'EUR',
+  'ALTIN',
+  'IMKB100'
 ];
 
-const List<String> cryptoList = [
-  'BTC',
-  'ETH',
-  'LTC',
-];
+enum DovizEnum {
+  USD,
+  EUR,
+  ALTIN,
+  IMKB100
+}
 
-class CoinData {}
+class Calculate {
+
+  double exchange(DovizEnum doviz)
+  {
+    if(doviz==DovizEnum.USD) return 5.66;
+    else if(doviz==DovizEnum.EUR) return 6.23;
+    else if (doviz==DovizEnum.ALTIN) return 288.34;
+    else if(doviz== DovizEnum.IMKB100) return 98.998;
+
+    return 0;
+  }
+
+}
