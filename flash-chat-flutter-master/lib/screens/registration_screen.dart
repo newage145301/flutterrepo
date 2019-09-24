@@ -37,11 +37,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: Container(
-                  height: 180.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               SizedBox(
@@ -56,7 +58,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   email = value;
                 },
                 decoration: InputDecoration(
-                  hintText: 'Enter your email',
+                  hintText: 'email adresi...',
                   hintStyle: TextStyle(color: Colors.grey),
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -87,7 +89,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   password = value;
                 },
                 decoration: InputDecoration(
-                  hintText: 'Enter your password',
+                  hintText: 'şifre...',
                   hintStyle: TextStyle(color: Colors.grey),
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -138,7 +140,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     minWidth: 200.0,
                     height: 42.0,
                     child: Text(
-                      'Register',
+                      'Kayıt Ol',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

@@ -31,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 Text(
-                  'Flash Chat',
+                  'Super Chat',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -55,7 +55,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
-                    'Log In',
+                    'Oturum Aç',
                   ),
                 ),
               ),
@@ -74,7 +74,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
-                    'Register',
+                    'Kayıt Ol',
                   ),
                 ),
               ),
