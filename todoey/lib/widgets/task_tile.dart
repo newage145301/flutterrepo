@@ -1,45 +1,32 @@
 import 'package:flutter/material.dart';
-bool newValue = true;
-class TaskTile extends StatefulWidget {
+
+class TaskTile extends StatelessWidget {
+  final bool isChecked;
+  final String taskTitle;
+  final Function checkBoxCallback;
+  TaskTile({this.isChecked, this.taskTitle, this.checkBoxCallback});
+
   @override
-  _TaskTileState createState() => _TaskTileState();
-}
-
-class _TaskTileState extends State<TaskTile> {
-
-  void checkBoxOnChange(bool value)
-  {
-   setState(() {
-  newValue = value;
-   });
-  }
-
- @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text('Görev 1'),
-      subtitle: Text('Bu bir görevdir. ',
-      style: TextStyle(decoration:newValue? TextDecoration.lineThrough:null),),
-      trailing: new TaskCheckBox(checkBoxState: newValue,checkBoxOnChange: checkBoxOnChange),
+      title: Text(
+        taskTitle,
+        style: TextStyle(
+            decoration: isChecked ? TextDecoration.lineThrough : null),
+      ),
+      trailing: Checkbox(
+        activeColor: Colors.lightBlueAccent,
+        value: isChecked,
+        onChanged: checkBoxCallback,
+      ),
     );
   }
 }
 
-class TaskCheckBox extends StatelessWidget {
-
-  TaskCheckBox({this.checkBoxState,this.checkBoxOnChange});
-
-  final bool checkBoxState;
-  final Function checkBoxOnChange;
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Checkbox(
-      value: newValue,
-
-      onChanged: checkBoxOnChange,
-    );
-  }
-}
+/*
+(bool value) {
+setState(() {
+newValue = value;
+});
+},
+*/

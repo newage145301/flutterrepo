@@ -2,10 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 import 'package:todoey/widgets/add_task_screen.dart';
+import 'package:todoey/models/task.dart';
 
+class TasksScreen extends StatefulWidget {
 
-class TasksScreen extends StatelessWidget {
+  @override
+  _TasksScreenState createState() => _TasksScreenState();
+}
 
+class _TasksScreenState extends State<TasksScreen> {
+
+  List<Task> tasks = [
+    Task(name: 'Süt al', isDone: true),
+    Task(name: 'Yumurta al'),
+    Task(name: 'Ekmek al'),
+    Task(name: 'Ekmek al'),
+  ];
 
     @override
   Widget build(BuildContext context) {
@@ -14,7 +26,7 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (context)=>AddTask());
+          showModalBottomSheet(context: context, builder: (context)=>AddTask(tasks));
         },
         child: Icon(Icons.add),
       ),
@@ -63,7 +75,7 @@ class TasksScreen extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
-              child: new TasksList(),
+              child: new TasksList(tasks),
             ),
           )
         ],

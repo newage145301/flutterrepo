@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/models/task.dart';
 
 class AddTask extends StatelessWidget {
+
+
+  final List<Task> tasks;
+  Function addTask(newTask);
+
+  AddTask({this.tasks,this.addTask});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +36,8 @@ class AddTask extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               FlatButton(
-                onPressed: (){},
+                onPressed: (){tasks.add(Task(name: 'dsfsdfsdf', isDone: true));
+                },
                 child: Text('Ekle',
                 style: TextStyle(
                   color: Colors.white
