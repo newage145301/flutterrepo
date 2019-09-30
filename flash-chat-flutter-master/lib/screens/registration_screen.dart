@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'chat_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
-
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration';
 
@@ -21,7 +20,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   void initState() {
     // TODO: implement initState
 
-    _showSpinner=false;
+    _showSpinner = false;
     print('initstate runed');
   }
 
@@ -66,11 +65,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -97,11 +98,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -113,27 +116,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
                   color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  borderRadius: BorderRadius.circular(30),
                   elevation: 5.0,
                   child: MaterialButton(
                     onPressed: () async {
                       try {
                         setState(() {
-                          _showSpinner=true;
+                          _showSpinner = true;
                         });
                         final auth = await _auth.createUserWithEmailAndPassword(
                             email: email, password: password);
 
-                        if(auth.user !=null)
-                          {
-                            Navigator.pushNamed(context, ChatScreen.id);
-                          }
+                        if (auth.user != null) {
+                          Navigator.pushNamed(context, ChatScreen.id);
+                        }
                       } catch (e) {
                         print(e);
-                      }
-                      finally{
+                      } finally {
                         setState(() {
-                          _showSpinner=false;
+                          _showSpinner = false;
                         });
                       }
                     },
