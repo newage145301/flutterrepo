@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/models/task.dart';
-String newText='';
+
+String newText = '';
+
 class AddTask extends StatelessWidget {
-
-
-
   final List<Task> tasks;
   final Function addTask;
 
-  AddTask({this.tasks,this.addTask});
+  AddTask({this.tasks, this.addTask});
 
   @override
   Widget build(BuildContext context) {
@@ -22,38 +21,35 @@ class AddTask extends StatelessWidget {
               topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         ),
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Text(
-                'Yeni Görev',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.lightBlueAccent,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.w500),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              'Yeni Görev',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.lightBlueAccent,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w500),
+            ),
+            TextField(
+              autofocus: true,
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                newText = value;
+              },
+            ),
+            FlatButton(
+              onPressed: () {
+                addTask(newText);
+              },
+              child: Text(
+                'Ekle',
+                style: TextStyle(color: Colors.white),
               ),
-              TextField(
-                autofocus: true,
-                textAlign: TextAlign.center,
-                onChanged: (value){
-                  newText=value;
-
-                },
-              ),
-              FlatButton(
-                onPressed: (){
-                  addTask(newText);
-
-                },
-                child: Text('Ekle',
-                style: TextStyle(
-                  color: Colors.white
-                ),),
-                color: Colors.lightBlueAccent,
-              )
-            ],
-          ),
-       
+              color: Colors.lightBlueAccent,
+            )
+          ],
+        ),
       ),
     );
   }
