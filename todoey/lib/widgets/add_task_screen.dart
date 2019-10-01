@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/models/task.dart';
-
+String newText='';
 class AddTask extends StatelessWidget {
 
 
+
   final List<Task> tasks;
-  Function addTask(newTask);
+  final Function addTask;
 
   AddTask({this.tasks,this.addTask});
 
@@ -34,9 +35,15 @@ class AddTask extends StatelessWidget {
               TextField(
                 autofocus: true,
                 textAlign: TextAlign.center,
+                onChanged: (value){
+                  newText=value;
+
+                },
               ),
               FlatButton(
-                onPressed: (){tasks.add(Task(name: 'dsfsdfsdf', isDone: true));
+                onPressed: (){
+                  addTask(newText);
+
                 },
                 child: Text('Ekle',
                 style: TextStyle(

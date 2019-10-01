@@ -5,7 +5,6 @@ import 'package:todoey/widgets/add_task_screen.dart';
 import 'package:todoey/models/task.dart';
 
 class TasksScreen extends StatefulWidget {
-
   @override
   _TasksScreenState createState() => _TasksScreenState();
 }
@@ -13,20 +12,28 @@ class TasksScreen extends StatefulWidget {
 class _TasksScreenState extends State<TasksScreen> {
 
   List<Task> tasks = [
-    Task(name: 'Süt al', isDone: true),
+    Task(name: 'Süt al'),
     Task(name: 'Yumurta al'),
-    Task(name: 'Ekmek al'),
-    Task(name: 'Ekmek al'),
+      Task(name: 'Ekmek al'),
   ];
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (context)=>AddTask(tasks));
+          showModalBottomSheet(
+              context: context,
+              builder: (context) => AddTask(
+                  tasks: tasks,
+                  addTask: (taskTitle) {
+                    setState(() {
+                      tasks.add(Task(name: taskTitle, isDone: false));
+                    });
+                    Navigator.pop(context);
+                  }));
         },
         child: Icon(Icons.add),
       ),
@@ -58,7 +65,7 @@ class _TasksScreenState extends State<TasksScreen> {
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '12 Tasks',
+                  '${tasks.length} Tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -83,6 +90,3 @@ class _TasksScreenState extends State<TasksScreen> {
     );
   }
 }
-
-
-
