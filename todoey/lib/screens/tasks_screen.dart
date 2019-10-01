@@ -58,14 +58,14 @@ class _TasksScreenState extends State<TasksScreen> {
                   height: 10,
                 ),
                 Text(
-                  'NeYapam',
+                  'İş Listem',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 40.0,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '${tasks.length} Tasks',
+                  '${tasks.length} Görev',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
