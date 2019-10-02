@@ -1,21 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 import 'package:todoey/widgets/add_task_screen.dart';
-import 'package:todoey/models/task.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [
-    Task(name: 'Süt al'),
-    Task(name: 'Yumurta al'),
-    Task(name: 'Ekmek al'),
-  ];
-
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +15,7 @@ class _TasksScreenState extends State<TasksScreen> {
         onPressed: () {
           showModalBottomSheet(
               context: context,
-              builder: (context) => AddTask(
-                  tasks: tasks,
-                  addTask: (taskTitle) {
-                    setState(() {
-                      tasks.add(Task(name: taskTitle, isDone: false));
-                    });
-                    Navigator.pop(context);
-                  }));
+              builder: (context) => AddTask());
         },
         child: Icon(Icons.add),
       ),
@@ -64,7 +47,7 @@ class _TasksScreenState extends State<TasksScreen> {
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '${tasks.length} Görev',
+                  '${Provider.of<TaskData>(context).taskCount} Görev',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -81,7 +64,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
-              child: new TasksList(tasks),
+              child: new TasksList(),
             ),
           )
         ],
