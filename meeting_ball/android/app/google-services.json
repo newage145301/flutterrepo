@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "845829107583",
+    "firebase_url": "https://api-project-845829107583.firebaseio.com",
+    "project_id": "api-project-845829107583",
+    "storage_bucket": "api-project-845829107583.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845829107583:android:ea4ec7efc09f34f2c9744a",
+        "android_client_info": {
+          "package_name": "com.btekno.meetingball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845829107583-4jso1al4nosr973iuqcm2jkvg055ilhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIe7ZXBt2LTbJjUM-65e2RKWG78X7KVqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845829107583-4jso1al4nosr973iuqcm2jkvg055ilhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
