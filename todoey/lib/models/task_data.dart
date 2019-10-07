@@ -15,6 +15,11 @@ class TaskData extends ChangeNotifier
 
   int get taskCount=> _tasks.length;
 
+  void updateTask(Task task)
+  {
+    task.toggleDone();
+    notifyListeners();
+  }
 
   void addTask(task)
   {
@@ -22,4 +27,9 @@ class TaskData extends ChangeNotifier
     notifyListeners();
   }
 
+  void deleteTask(Task task)
+  {
+    _tasks.remove(task);
+    notifyListeners();
+  }
 }

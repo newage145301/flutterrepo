@@ -4,8 +4,8 @@ class Task{
 
   Task({this.name,this.isDone=false});
 
-  void toggleDone(bool checkBoxState){
-    isDone = checkBoxState;
+  void toggleDone(){
+    isDone = !isDone;
   }
 
 
