@@ -42,26 +42,7 @@ class EnterPin extends StatelessWidget {
                         .get();
 
                     if (data.exists ) {
-                      if(1<=2)
-                        {
-                          Alert(
-                              type: AlertType.error,
-                              context: context,
-                              title: "Meeting Ball",
-                              desc: "The room you are trying to enter is expired",
-                              buttons: [
-                                DialogButton(
-                                  child: Text(
-                                    "Back",
-                                    style: TextStyle(color: Colors.white, fontSize: 20),
-                                  ),
-                                  onPressed: () => Navigator.pop(context),
-                                  width: 120,
-                                )
-                              ])
-                              .show();
 
-                        }
                       var userName = data['userName'];
                       print('oda açıldı. Admin: $userName');
                       Navigator.pushNamed(context, 'enternick');
