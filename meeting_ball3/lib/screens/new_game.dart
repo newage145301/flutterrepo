@@ -1,3 +1,5 @@
+//todo pin code lırken loading dönse iyi olur. pincode da null gözüküyor
+
 import 'package:flutter/material.dart';
 import 'package:meeting_ball3/models/game_data.dart';
 import 'package:meeting_ball3/screens/enter_nick.dart';
