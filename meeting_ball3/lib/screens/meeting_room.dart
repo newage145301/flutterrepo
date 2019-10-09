@@ -98,7 +98,9 @@ class MeetingRoom extends StatelessWidget {
                  return Column(
                    children: textList,
                  );
-               }
+               } else return Column(children: <Widget>[
+                 Text('Not user yet')]);
+             
            },
          )
 
