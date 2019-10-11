@@ -72,7 +72,7 @@ class MeetingRoom extends StatelessWidget {
       floatingActionButton:  FloatingActionButton(
         backgroundColor: Colors.white,
         onPressed: () {
-         print('');
+         print(Provider.of<GameData>(context).pinCode);
         },
         child: Icon(Icons.add),
       ),
@@ -100,7 +100,7 @@ class MeetingRoom extends StatelessWidget {
                  );
                } else return Column(children: <Widget>[
                  Text('Not user yet')]);
-             
+
            },
          )
 

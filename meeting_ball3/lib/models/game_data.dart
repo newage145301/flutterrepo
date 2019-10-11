@@ -23,4 +23,8 @@ class GameData extends ChangeNotifier{
     notifyListeners();
   }
 
+  void updatePinCode(int value) {
+  _pinCode=value;
+    notifyListeners();
+  }
 }

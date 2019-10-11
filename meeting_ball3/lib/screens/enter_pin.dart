@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:meeting_ball3/models/game_data.dart';
 import 'package:meeting_ball3/widgets/game_button.dart';
+import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class EnterPin extends StatelessWidget {
@@ -45,6 +47,8 @@ class EnterPin extends StatelessWidget {
 
                       var userName = data['userName'];
                       print('oda açıldı. Admin: $userName');
+                      Provider.of<GameData>(context).updatePinCode(int.parse(newPin));
+
                       Navigator.pushNamed(context, 'enternick');
                     } else {
                       Alert(
